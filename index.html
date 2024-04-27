@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Bookstore</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .book {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            float: left;
+        }
+        .book img {
+            width: 100%;
+        }
+        .book-details {
+            margin-top: 10px;
+        }
+        .cart-button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mr. Bookstore</h1>
+        <button class="cart-button" onclick="showCart()">View Cart</button>
+    </header>
+
+    <!-- Book 1 -->
+    <div class="book">
+        <img src="book1.jpg" alt="Book 1">
+        <div class="book-details">
+            <h2>Book 1</h2>
+            <p>$10</p>
+            <button onclick="addToCart('Book 1', 10)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Book 2 -->
+    <div class="book">
+        <img src="book2.jpg" alt="Book 2">
+        <div class="book-details">
+            <h2>Book 2</h2>
+            <p>$15</p>
+            <button onclick="addToCart('Book 2', 15)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Book 3 -->
+    <div class="book">
+        <img src="book3.jpg" alt="Book 3">
+        <div class="book-details">
+            <h2>Book 3</h2>
+            <p>$20</p>
+            <button onclick="addToCart('Book 3', 20)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Book 4 -->
+    <div class="book">
+        <img src="book4.jpg" alt="Book 4">
+        <div class="book-details">
+            <h2>Book 4</h2>
+            <p>$25</p>
+            <button onclick="addToCart('Book 4', 25)">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Book 5 -->
+    <div class="book">
+        <img src="book5.jpg" alt="Book 5">
+        <div class="book-details">
+            <h2>Book 5</h2>
+            <p>$30</p>
+            <button onclick="addToCart('Book 5', 30)">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>123 Book Street, Anytown, USA</p>
+        <p>Contact: (123) 456-7890</p>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function addToCart(book, price) {
+            cart.push({ book, price });
+            alert(`${book} added to cart.`);
+        }
+
+        function showCart() {
+            let cartContent = '';
+            cart.forEach(item => {
+                cartContent += `<p>${item.book}: $${item.price}</p>`;
+            });
+            alert(cartContent);
+        }
+    </script>
+</body>
+</html>
